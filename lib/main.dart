@@ -9,6 +9,7 @@ import 'package:sehetak2/screens/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sehetak2/widget/OnlineConsultation.dart';
+import 'package:sehetak2/widget/online_details.dart';
 import 'package:sehetak2/widget/test.dart';
 import 'inner_screens/brands_navigation_rail.dart';
 import 'inner_screens/categories_feeds.dart';
@@ -107,6 +108,7 @@ class _MyAppState extends State<MyApp> {
                     SignUpScreen.routeName: (ctx) => SignUpScreen(),
                     BottomBarScreen.routeName: (ctx) => BottomBarScreen(),
                     UploadProductForm.routeName: (ctx) => UploadProductForm(),
+                    "online_detailes": (context) => OnlineDetailes(),
                   },
                 );
               }));

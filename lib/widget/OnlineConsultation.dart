@@ -337,7 +337,12 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                               size: 18.0,
                                                               color: HexColor(
                                                                   '#787575')),
-                                                          onTap: () {},
+                                                          onTap: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pushNamed(
+                                                                    "online_detailes");
+                                                          },
                                                         ),
                                                       ),
                                                     ],
