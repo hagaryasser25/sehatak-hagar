@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                     SignUpScreen.routeName: (ctx) => SignUpScreen(),
                     BottomBarScreen.routeName: (ctx) => BottomBarScreen(),
                     UploadProductForm.routeName: (ctx) => UploadProductForm(),
-                    "online_detailes": (context) => OnlineDetailes(),
+                    "OnlineDetailes": (context) => OnlineDetailes(),
                   },
                 );
               }));

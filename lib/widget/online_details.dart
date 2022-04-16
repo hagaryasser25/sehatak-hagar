@@ -4,15 +4,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class OnlineDetailes extends StatefulWidget {
-  const OnlineDetailes({Key key}) : super(key: key);
-
-  @override
-  State<OnlineDetailes> createState() => _OnlineDetailesState();
-}
-
-class _OnlineDetailesState extends State<OnlineDetailes> {
-  get image => null;
+class OnlineDetailes extends StatelessWidget {
+  String name;
+  String images;
+  String title;
+  String description;
+  String price;
+  double rating;
+  OnlineDetailes(
+      {this.name,
+      this.images,
+      this.title,
+      this.description,
+      this.price,
+      this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +33,7 @@ class _OnlineDetailesState extends State<OnlineDetailes> {
               child: Container(
                 width: 350.w,
                 height: 175.h,
-                child: Image.network(
-                    'https://cdn-dr-images.vezeeta.com/Assets/Images/SelfServiceDoctors/ENT97b890/Profile/150/mohamed-habib-dermatology_20201207161313628.jpg'),
+                child: Image.network(images),
               ),
             ),
             Padding(
@@ -37,7 +41,7 @@ class _OnlineDetailesState extends State<OnlineDetailes> {
                 top: 20.h,
               ),
               child: Text(
-                'Dr.Salim Salah',
+                name,
                 style: TextStyle(
                   color: HexColor('#25282B'),
                   fontWeight: FontWeight.w700,
@@ -65,7 +69,7 @@ class _OnlineDetailesState extends State<OnlineDetailes> {
                 left: 35.w,
               ),
               child: Text(
-                'Consultant of Dermatology, Cosmetology, Andrology & Venereology.',
+                title,
                 style: TextStyle(
                   color: HexColor('#C4C4C4'),
                   fontWeight: FontWeight.w400,
@@ -78,7 +82,7 @@ class _OnlineDetailesState extends State<OnlineDetailes> {
                 left: 35.w,
               ),
               child: Text(
-                'Dermatologist Specialized in Genital Dermatology, Andrology, Adult Dermatology, Pediatric Dermatology and Cosmetic Dermatology and Laser.',
+                description,
                 style: TextStyle(
                   color: HexColor('#C4C4C4'),
                   fontWeight: FontWeight.w400,
@@ -92,7 +96,7 @@ class _OnlineDetailesState extends State<OnlineDetailes> {
                 right: 205.w,
               ),
               child: Text(
-                'Fees: 90 EGP',
+                price,
                 style: TextStyle(
                   color: HexColor('#000000'),
                   fontWeight: FontWeight.w400,

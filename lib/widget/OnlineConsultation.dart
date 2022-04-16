@@ -8,6 +8,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'online_details.dart';
+
 class OnlineConsultation extends StatefulWidget {
   const OnlineConsultation({Key key}) : super(key: key);
 
@@ -219,7 +221,9 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                   scrollDirection: Axis.horizontal,
                                   shrinkWrap: true,
                                   itemCount: snapshot.data.docs.length,
-                                  itemBuilder: (context, i) {
+                                  itemBuilder: (BuildContext context, int i) {
+                                    DocumentSnapshot posts =
+                                        snapshot.data.docs[i];
                                     return Row(
                                       children: [
                                         Column(
@@ -230,7 +234,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: NetworkImage(
-                                                        '${snapshot.data.docs[i].data()['image']}'),
+                                                        posts['image']),
                                                     fit: BoxFit.fill),
                                                 borderRadius:
                                                     BorderRadius.circular(10),
@@ -263,7 +267,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                       top: 14,
                                                     ),
                                                     child: Text(
-                                                      '${snapshot.data.docs[i].data()['name']}',
+                                                      posts['name'],
                                                       style: TextStyle(
                                                         color:
                                                             HexColor('#000000'),
@@ -274,7 +278,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                     ),
                                                   ),
                                                   Text(
-                                                    '${snapshot.data.docs[i].data()['sr']}',
+                                                    posts['sr'],
                                                     style: TextStyle(
                                                       color:
                                                           HexColor('#7c7a77'),
@@ -295,10 +299,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                         child:
                                                             RatingBar.builder(
                                                           initialRating:
-                                                              snapshot.data
-                                                                      .docs[i]
-                                                                      .data()[
-                                                                  'rating'],
+                                                              posts['rating'],
                                                           minRating: 1,
                                                           itemSize: 15,
                                                           direction:
@@ -338,10 +339,26 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                               color: HexColor(
                                                                   '#787575')),
                                                           onTap: () {
-                                                            Navigator.of(
-                                                                    context)
-                                                                .pushNamed(
-                                                                    "online_detailes");
+                                                            Navigator.push(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder:
+                                                                        (context) {
+                                                              return OnlineDetailes(
+                                                                name: posts[
+                                                                    'name'],
+                                                                images: posts[
+                                                                    'image'],
+                                                                title: posts[
+                                                                    'title'],
+                                                                description: posts[
+                                                                    'description'],
+                                                                price: posts[
+                                                                    'price'],
+                                                                // rating: posts[
+                                                                //  rating],
+                                                              );
+                                                            }));
                                                           },
                                                         ),
                                                       ),
