@@ -9,6 +9,8 @@ import 'package:sehetak2/screens/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sehetak2/widget/OnlineConsultation.dart';
+import 'package:sehetak2/widget/home-examination.dart';
+import 'package:sehetak2/widget/online-consultation-search.dart';
 import 'package:sehetak2/widget/online_details.dart';
 import 'package:sehetak2/widget/test.dart';
 import 'inner_screens/brands_navigation_rail.dart';
@@ -92,7 +94,7 @@ class _MyAppState extends State<MyApp> {
                   title: 'Flutter Demo',
                   theme:
                       Styles.themeData(themeChangeProvider.darkTheme, context),
-                  home: OnlineConsultation(),
+                  home: const HomeExamination(),
                   //initialRoute: '/',
                   routes: {
                     //   '/': (ctx) => LandingPage(),
@@ -109,6 +111,8 @@ class _MyAppState extends State<MyApp> {
                     BottomBarScreen.routeName: (ctx) => BottomBarScreen(),
                     UploadProductForm.routeName: (ctx) => UploadProductForm(),
                     "OnlineDetailes": (context) => OnlineDetailes(),
+                    "OnlineConsultationSearch": (context) =>
+                        const OnlineConsultationSearch(),
                   },
                 );
               }));

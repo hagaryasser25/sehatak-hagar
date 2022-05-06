@@ -8,18 +8,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:sehetak2/widget/home-detailes.dart';
+import 'package:sehetak2/widget/home-search.dart';
 import 'package:sehetak2/widget/online-consultation-search.dart';
 
 import 'online_details.dart';
 
-class OnlineConsultation extends StatefulWidget {
-  const OnlineConsultation({Key key}) : super(key: key);
+class HomeExamination extends StatefulWidget {
+  const HomeExamination({Key key}) : super(key: key);
 
   @override
-  _OnlineConsultationState createState() => _OnlineConsultationState();
+  _HomeExaminationState createState() => _HomeExaminationState();
 }
 
-class _OnlineConsultationState extends State<OnlineConsultation>
+class _HomeExaminationState extends State<HomeExamination>
     with SingleTickerProviderStateMixin {
   TabController tabController;
   TextEditingController searchController = TextEditingController();
@@ -134,7 +136,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const OnlineConsultationSearch();
+                      return const HomeSearch();
                     }));
                   },
                 ),
@@ -359,7 +361,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -540,7 +542,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -721,7 +723,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -902,7 +904,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -1083,7 +1085,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -1264,7 +1266,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                                                 MaterialPageRoute(
                                                                     builder:
                                                                         (context) {
-                                                              return OnlineDetailes(
+                                                              return HomeDetailes(
                                                                 name: posts[
                                                                     'name'],
                                                                 images: posts[
@@ -1357,7 +1359,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                   right: 2.w,
                                 ),
                                 child: Text(
-                                  'If you want to book an \n appointment in clinic   \n     just click here',
+                                  'If you want to chat with \ndoctor online just click \nhere.',
                                   style: TextStyle(
                                     color: HexColor('#7c7a77'),
                                     fontWeight: FontWeight.w400,
@@ -1379,7 +1381,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                                           borderRadius:
                                               BorderRadius.circular(25)),
                                     ),
-                                    child: Text('Book'),
+                                    child: Text('Chat'),
                                     onPressed: () {},
                                   ),
                                 ),
@@ -1388,7 +1390,7 @@ class _OnlineConsultationState extends State<OnlineConsultation>
                           ),
                         ),
                         Image.network(
-                            "https://img.freepik.com/free-vector/doctor-examining-patient-clinic-illustrated_23-2148856559.jpg"),
+                            "https://www.usnews.com/dims4/USNEWS/567dd26/2147483647/thumbnail/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F98%2F5a%2F97cdc13f4fd1aa575ee56d193526%2F210902hckhntelehealth-editorial.jpg"),
                       ],
                     ),
                   )),

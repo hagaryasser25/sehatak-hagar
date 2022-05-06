@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class OnlineDetailes extends StatelessWidget {
+class HomeDetailes extends StatelessWidget {
   String name;
   String images;
   String title;
   String description;
   String price;
   double rating;
-  OnlineDetailes(
+  HomeDetailes(
       {this.name,
       this.images,
       this.title,
@@ -181,7 +181,7 @@ class OnlineDetailes extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: HexColor('#80B1FE'),
                       ),
-                      child: Text('Make an Appointment'),
+                      child: Text('Request home examination'),
                       onPressed: () {},
                     ),
                   ),
