@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import 'home-request.dart';
+
 class HomeDetailes extends StatelessWidget {
   String name;
   String images;
@@ -24,6 +26,7 @@ class HomeDetailes extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: () => Scaffold(
+        backgroundColor: HexColor("#f5fcfd"),
         // appBar: AppBar(
         //  toolbarHeight: 30,
         //  elevation: 0.0,
@@ -156,7 +159,7 @@ class HomeDetailes extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     top: 34.h,
-                    left: 35.w,
+                    left: 27.w,
                   ),
                   child: ConstrainedBox(
                     constraints: BoxConstraints.tightFor(width: 67, height: 56),
@@ -182,7 +185,12 @@ class HomeDetailes extends StatelessWidget {
                         primary: HexColor('#80B1FE'),
                       ),
                       child: Text('Request home examination'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const HomeRequest();
+                        }));
+                      },
                     ),
                   ),
                 ),
