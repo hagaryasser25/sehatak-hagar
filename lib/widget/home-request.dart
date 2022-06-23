@@ -123,7 +123,7 @@ class HomeRequest extends StatelessWidget {
                       height: 10,
                       thickness: 0,
                       endIndent: 0,
-                      color: Color.fromARGB(255, 219, 218, 218),
+                      color: Colors.grey,
                     ),
                   ),
                   Padding(
@@ -168,7 +168,7 @@ class HomeRequest extends StatelessWidget {
                       height: 10,
                       thickness: 0,
                       endIndent: 0,
-                      color: HexColor("#080808"),
+                      color: Colors.grey,
                     ),
                   ),
                   Padding(
@@ -213,7 +213,7 @@ class HomeRequest extends StatelessWidget {
                       height: 10,
                       thickness: 0,
                       endIndent: 0,
-                      color: Color.fromARGB(255, 219, 218, 218),
+                      color: Colors.grey,
                     ),
                   ),
                   Padding(
@@ -247,7 +247,7 @@ class HomeRequest extends StatelessWidget {
       child: Text("Ok"),
       onPressed: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const HomeRequest();
+          return const HomeExamination();
         }));
       },
     );

@@ -12,6 +12,7 @@ import 'package:sehetak2/widget/home-detailes.dart';
 import 'package:sehetak2/widget/home-search.dart';
 import 'package:sehetak2/widget/online-consultation-search.dart';
 
+import 'OnlineConsultation.dart';
 import 'online_details.dart';
 
 class HomeExamination extends StatefulWidget {
@@ -1382,7 +1383,12 @@ class _HomeExaminationState extends State<HomeExamination>
                                               BorderRadius.circular(25)),
                                     ),
                                     child: Text('Chat'),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return const OnlineConsultation();
+                                      }));
+                                    },
                                   ),
                                 ),
                               ),
